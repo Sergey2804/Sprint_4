@@ -11,16 +11,16 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class RentPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     // Локатор поля выбора даты доставки
-    private By deliveryDateInput = By.cssSelector("input[placeholder='* Когда привезти самокат']");
+    private final By deliveryDateInput = By.cssSelector("input[placeholder='* Когда привезти самокат']");
     // Локатор поля выбора срока аренды
-    private By rentalPeriodField = By.cssSelector("div.Dropdown-root");
+    private final By rentalPeriodField = By.cssSelector("div.Dropdown-root");
     // Локатор поля для комментария
-    private By commentField = By.cssSelector("input[placeholder='Комментарий для курьера']");
+    private final By commentField = By.cssSelector("input[placeholder='Комментарий для курьера']");
     // Локатор кнопки подтверждения заказа
-    private By orderConfirmButton =
+    private final By orderConfirmButton =
             By.xpath(".//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
 
     public RentPage(WebDriver driver) {

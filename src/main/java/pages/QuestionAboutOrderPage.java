@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class QuestionAboutOrderPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     // Локатор вопроса о подтверждении заказа
-    private By confirmQuestion = By.xpath(".//div[text()='Хотите оформить заказ?']");
+    private final By confirmQuestion = By.xpath(".//div[text()='Хотите оформить заказ?']");
     // Локатор кнопки подтверждения заказа
-    private By confirmButton = By.xpath(".//button[text()='Да']");
+    private final By confirmButton = By.xpath(".//button[text()='Да']");
 
     public QuestionAboutOrderPage(WebDriver driver) {
         this.driver = driver;

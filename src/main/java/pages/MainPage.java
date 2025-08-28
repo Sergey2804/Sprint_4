@@ -20,11 +20,11 @@ public class MainPage {
 
 
     // Локатор верхней кнопки заказа
-    public By UpButtonOrder =
+    public By upButtonOrder =
             By.xpath(".//div[@class='Header_Nav__AGCXC']/button[text()='Заказать']");
 
     // Локатор нижней кнопки заказа самоката
-    public By DownButtonOrder =
+    public By downButtonOrder =
          By.xpath(".//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']");
 
     // Конструктор для вебдрайвера
@@ -44,17 +44,17 @@ public class MainPage {
     }
     public void clickOrderUpButton() {
 
-        driver.findElement(UpButtonOrder).click();
+        driver.findElement(upButtonOrder).click();
 
     }
     // Метод кликает по верхней или нижней кнопке заказа самоката
     public void clickOrderDownButton() {
 
-            WebElement lowerOrderButton = driver.findElement(DownButtonOrder);
+            WebElement lowerOrderButton = driver.findElement(downButtonOrder);
             ((JavascriptExecutor)driver).
                     executeScript("arguments[0].scrollIntoView();", lowerOrderButton);
             new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .until(ExpectedConditions.visibilityOfElementLocated(DownButtonOrder));
+                    .until(ExpectedConditions.visibilityOfElementLocated(downButtonOrder));
             lowerOrderButton.click();
 
     }

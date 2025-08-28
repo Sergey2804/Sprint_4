@@ -22,8 +22,8 @@ public class AnswersAndQuestionsTest extends BaseTest {
         this.answer = answer;
     }
 
-    // парметры для теста
-    @Parameterized.Parameters
+    // параметры для теста
+    @Parameterized.Parameters(name = "Вопрос {0}: {1}")
     public static Object[][] getCredentials(){
         return new Object[][] {
                 { 0, "Сколько это стоит? И как оплатить?", "Сутки — 400 рублей. Оплата курьеру — наличными или картой."},
@@ -38,7 +38,7 @@ public class AnswersAndQuestionsTest extends BaseTest {
     }
 
     @Test
-    public void checkClickQuestion_expectTextIsDisplayed() {
+    public void checkClickQuestionAndExpectTextIsDisplayedTest() {
         super.implicitlyWait(3);
 
         MainPage mainPage = new MainPage(driver);

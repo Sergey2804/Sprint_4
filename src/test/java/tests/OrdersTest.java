@@ -42,11 +42,11 @@ public class OrdersTest extends BaseTest {
             this.comment = comment;
         }
 
-        @Parameterized.Parameters
+        @Parameterized.Parameters(name = "Заказ через {0}: {1} {2}, {3}, период: {5}, цвет: {6}")
         public static Object[][] getOrderFormData() {
             return new Object[][] {
-                    { "//div/button[@class='Button_Button__ra12g']", "Иван", "Иванов", "Москва", "89271111111", "сутки", "black", "1" },
-                    { "//div/button[@class='Button_Button__ra12g Button_Middle__1CSJM']", "Петр",
+                    { "верхняя кнопка", "Иван", "Иванов", "Москва", "89271111111", "сутки", "black", "1" },
+                    { "нижняя кнопка", "Петр",
                             "Петров",
                             "г. Саранск, ул. Ленина, 6-33",
                             "+79275632548", "семеро суток", "grey",
@@ -57,7 +57,7 @@ public class OrdersTest extends BaseTest {
 
         // Тест: проверяем весь флоу позитивного сценария заказа самоката
         @Test
-        public void checkOrderUp()  {
+        public void checkOrderUpTest()  {
             super.implicitlyWait(3);
 
             MainPage mainPage = new MainPage(driver);
@@ -85,7 +85,7 @@ public class OrdersTest extends BaseTest {
         }
 
     @Test
-    public void checkOrderDown()  {
+    public void checkOrderDownTest()  {
         super.implicitlyWait(3);
 
         MainPage mainPage = new MainPage(driver);
